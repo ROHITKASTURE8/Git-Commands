@@ -1,0 +1,45 @@
+1 - open git bash v
+2 - go to .ssh folder in the computer. (cd .ssh)
+3 - generate public key and private SSH key using command - ssh-keygen -o
+4 - If the key is already there just check it using command before step 3 -  ls -al ~/.ssh
+5 - If the id_rsa and id_rsa_pub is present means the ssh keys are there.
+6 - Paste the public key that is id_rsa_pub in the Github account in settings -> SSH & GPG Keys.
+7 - Now just use git Bash to connect or login to your git hub account using below command - 
+Example =>  ssh  -T git@github.disney.com
+8 - Aftfer doing above all steps i can import all private git repository using SSH clone option using the Eclipse or STS.
+
+git pull origin develop
+
+mvn clean verify
+ 
+ 
+git push -f --set-upstream  git@github.disney.com:Parks-Labor-Service-Platform/lsp-domain-profile.git
+
+
+Steps to send a pull request - 
+ 
+git clone git@github.disney.com:Parks-Labor-Service-Platform/lsp-common-logging.git
+cd lsp-common-logging
+
+git checkout -b (DEV)
+
+git branch to verify you are in the new branch
+git pull origin develop to match the remote develop branch state
+Make code changes in IDE
+mvn clean verify and ensure you see BUILD SUCCESS
+git add . or you can add the files individually git add .gitignore
+git commit -m "TIME-5472: adding standard gitignore and gitattributes
+git push and the git console will prompt you with the right command
+Navigate to https://github.disney.com/Parks-Labor-Service-Platform/lsp-common-logging and you should see a Pull request button. Fill out the description and ensure the request is against the develop branch
+
+GIT push to an existing pull request - 
+======================================
+git fetch
+git checkout hotfix
+git pull origin hotfix
+then please make your changes
+
+git add .
+git commit -m "changes!"
+git push origin hotfix
+
